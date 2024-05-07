@@ -1,0 +1,39 @@
+EXP_6
+package com.tssm.bscoer;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class InetPracticals {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		InetAddress localhost = InetAddress.getLocalHost();
+		System.out.println("LocalHost:");
+		System.out.println("Host Name:"+localhost.getHostName());
+		System.out.println("Host Address:"+localhost.getHostAddress());
+		System.out.println();
+		String hostName="www.facebook.in";
+		
+		InetAddress address=InetAddress.getByName(hostName);
+		System.out.println("Host Name:"+address.getHostName());
+		System.out.println("Host Address:"+address.getHostAddress());
+		System.out.println();
+		
+		InetAddress[] allinetAddress=InetAddress.getAllByName(hostName);
+		System.out.println("All host Name:"+hostName+":");
+		for(InetAddress addr:allinetAddress) {
+		System.out.println("All Host Addresses:"+addr.getHostAddress());
+		}
+	
+		} 
+		catch (UnknownHostException e) {
+		
+		e.getMessage();
+		}
+		
+		}
+			
+			
+	}
